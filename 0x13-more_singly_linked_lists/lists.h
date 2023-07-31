@@ -5,13 +5,12 @@
 #include <stdio.h> /*standard libary*/
 
 /** 
- * struct listint_s - Structure use to define slln
- * @n - integer value of node
- * @next - Link to next node in the list
+ * struct listint_s - Singly linked list
+ * @n - integer
+ * @next - points to next node in
  *
  * Description: singly linked list node structure
  */
-
 typedef struct listint_s
 {
 	int n;
