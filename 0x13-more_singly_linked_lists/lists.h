@@ -9,6 +9,7 @@
  * @n - integer value of node
  * @next - Link to next node in the list
  *
+ * Description: singly linked list node structure
  */
 
 typedef struct listint_s
