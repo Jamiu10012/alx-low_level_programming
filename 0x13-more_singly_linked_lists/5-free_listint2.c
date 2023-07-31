@@ -4,6 +4,7 @@
 /**
  * free_listint2 - Free the list and set the head to null
  * @head: head of list
+ *
  */
 
 void free_listint2(listint_t **head)
@@ -12,12 +13,12 @@ void free_listint2(listint_t **head)
 
 	curr = *head;
 
-	while (curr != NULL) /* tranverse the list and free each node */
+	while (curr != NULL) 
 	{
 		nextn = curr->next;
 		free(curr);
 		curr = nextn;
 	}
 
-	*head = NULL; /* head seted to null */
+	*head = NULL;
 }
