@@ -1,0 +1,40 @@
+#include "lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * print_listint_safe - print listint_t safely
+ * @head: - point to node head
+ * Return: return the num of nodes
+ */
+
+size_t print_listint_safe(const listint_t *head)
+{
+	const listint_t *tort = head;
+	const listint_t *hare = head;
+	size_t count = 0;
+	int loop_detected = 0;
+
+	while (tort && hare && hare->next)
+	{
+		hare = hare->next->next;
+		tort = tort->next;
+
+		printf("%p] %d\n", (void *)tort, tort->n);
+		count++;
+
+		if (tort == hare)
+		{
+			loop_detected = 1;
+			break;
+		}
+	}
+
+	if (loop_detected)
+	{
+		printf("-> [%p] %d\n", (void *)tort, tort->n);
+		exit(98);
+	}
+
+	return (count);
+}
